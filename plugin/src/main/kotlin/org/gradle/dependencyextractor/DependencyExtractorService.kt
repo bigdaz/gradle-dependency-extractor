@@ -44,27 +44,31 @@ class DependencyExtractorService :
 
         println()
         println("RESOLVED: ${details.buildPath} | ${rootComponent.id} | ${details.configurationName}")
-        walkResolvedComponentResult(rootComponent, repositoryLookup, "", mutableSetOf())
+        val resolvedComponents = linkedMapOf<ComponentIdentifier, ComponentDependency>()
+        walkResolvedComponentResult(rootComponent, repositoryLookup, "", resolvedComponents)
+
+        resolvedComponents.values.forEach {
+            println("${it.id} <${it.repositoryUrl}> ${it.dependencies}")
+        }
     }
 
     private fun walkResolvedComponentResult(
         component: ResolvedComponentResult,
         repositoryLookup: RepositoryUrlLookup,
         prefix: String,
-        seenComponents: MutableSet<ComponentIdentifier>
+        seenComponents: MutableMap<ComponentIdentifier, ComponentDependency>
     ) {
-        component.dependencies
-            .filterIsInstance<ResolvedDependencyResult>()
-            .forEach {
-                val repositoryUrl = repositoryLookup.doLookup(it)
-                val targetComponent = it.selected
+        if (seenComponents.containsKey(component.id)) {
+            return
+        }
+        val repositoryUrl = repositoryLookup.doLookup(component)
+        val resolvedDependencies = component.dependencies.filterIsInstance<ResolvedDependencyResult>().map { it.selected }
 
-                if (seenComponents.add(targetComponent.id)) {
-                    println("${prefix}Dep: ${targetComponent.id} [${repositoryUrl}]")
-                    walkResolvedComponentResult(targetComponent, repositoryLookup, "$prefix-", seenComponents)
-                } else {
-                    println("${prefix}Dep: ${targetComponent.id} [SEEN]")
-                }
+        seenComponents[component.id] = ComponentDependency(component.id, repositoryUrl, resolvedDependencies.map { it.id })
+
+        resolvedDependencies
+            .forEach {
+                walkResolvedComponentResult(it, repositoryLookup, "$prefix-", seenComponents)
             }
     }
 
@@ -83,12 +87,9 @@ class DependencyExtractorService :
                 ?.toString()
         }
 
-        /**
-         * Looks up the repository for the given [ResolvedDependencyResult].
-         */
-        fun doLookup(resolvedDependencyResult: ResolvedDependencyResult): String? {
+        fun doLookup(component: ResolvedComponentResult): String? {
             // Get the repository id from the result
-            val repositoryId = result.getRepositoryId(resolvedDependencyResult.selected)
+            val repositoryId = result.getRepositoryId(component)
             return repositoryId?.let { getRepositoryUrlForId(it) }
         }
     }
