@@ -1,9 +1,12 @@
 package org.gradle.dependencyextractor
 
+import com.fasterxml.jackson.module.kotlin.jacksonObjectMapper
 import org.gradle.api.artifacts.component.ComponentIdentifier
+import org.gradle.api.artifacts.component.ProjectComponentIdentifier
 import org.gradle.api.artifacts.result.ResolvedComponentResult
 import org.gradle.api.artifacts.result.ResolvedDependencyResult
 import org.gradle.api.internal.artifacts.configurations.ResolveConfigurationDependenciesBuildOperationType
+import org.gradle.dependencyextractor.model.Dependency
 import org.gradle.internal.operations.*
 import java.net.URI
 
@@ -44,11 +47,12 @@ class DependencyExtractorService :
 
         println()
         println("RESOLVED: ${details.buildPath} | ${rootComponent.id} | ${details.configurationName}")
-        val resolvedComponents = linkedMapOf<ComponentIdentifier, ComponentDependency>()
+        val resolvedComponents = linkedMapOf<ComponentIdentifier, Dependency>()
         walkResolvedComponentResult(rootComponent, repositoryLookup, "", resolvedComponents)
 
+        val mapper = jacksonObjectMapper()
         resolvedComponents.values.forEach {
-            println("${it.id} <${it.repositoryUrl}> ${it.dependencies}")
+            println(mapper.writeValueAsString(it))
         }
     }
 
@@ -56,7 +60,7 @@ class DependencyExtractorService :
         component: ResolvedComponentResult,
         repositoryLookup: RepositoryUrlLookup,
         prefix: String,
-        seenComponents: MutableMap<ComponentIdentifier, ComponentDependency>
+        seenComponents: MutableMap<ComponentIdentifier, Dependency>
     ) {
         if (seenComponents.containsKey(component.id)) {
             return
@@ -64,12 +68,20 @@ class DependencyExtractorService :
         val repositoryUrl = repositoryLookup.doLookup(component)
         val resolvedDependencies = component.dependencies.filterIsInstance<ResolvedDependencyResult>().map { it.selected }
 
-        seenComponents[component.id] = ComponentDependency(component.id, repositoryUrl, resolvedDependencies.map { it.id })
+        seenComponents[component.id] = Dependency(componentId(component), repositoryUrl, resolvedDependencies.map { componentId(it) })
 
         resolvedDependencies
             .forEach {
                 walkResolvedComponentResult(it, repositoryLookup, "$prefix-", seenComponents)
             }
+    }
+
+    private fun componentId(component: ResolvedComponentResult): String {
+        val componentId = component.id
+        if (componentId is ProjectComponentIdentifier) {
+            return componentId.projectPath
+        }
+        return componentId.displayName
     }
 
     private class RepositoryUrlLookup(

@@ -1,10 +1,14 @@
 plugins {
     `java-gradle-plugin`
-    id("org.jetbrains.kotlin.jvm") version "1.8.10"
+    kotlin("jvm") version "1.8.10"
 }
 
 repositories {
     mavenCentral()
+}
+
+dependencies {
+    implementation("com.fasterxml.jackson.module:jackson-module-kotlin:2.12.1")
 }
 
 gradlePlugin {
