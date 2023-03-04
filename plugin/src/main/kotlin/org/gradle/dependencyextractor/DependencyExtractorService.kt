@@ -1,12 +1,12 @@
 package org.gradle.dependencyextractor
 
 import com.fasterxml.jackson.module.kotlin.jacksonObjectMapper
-import org.gradle.api.artifacts.component.ComponentIdentifier
 import org.gradle.api.artifacts.component.ProjectComponentIdentifier
 import org.gradle.api.artifacts.result.ResolvedComponentResult
 import org.gradle.api.artifacts.result.ResolvedDependencyResult
 import org.gradle.api.internal.artifacts.configurations.ResolveConfigurationDependenciesBuildOperationType
-import org.gradle.dependencyextractor.model.Dependency
+import org.gradle.dependencyextractor.model.ResolvedComponent
+import org.gradle.dependencyextractor.model.ResolvedConfiguration
 import org.gradle.internal.operations.*
 import java.net.URI
 
@@ -46,33 +46,33 @@ class DependencyExtractorService :
         val rootComponent = result.rootComponent
 
         println()
-        println("RESOLVED: ${details.buildPath} | ${rootComponent.id} | ${details.configurationName}")
-        val resolvedComponents = linkedMapOf<ComponentIdentifier, Dependency>()
-        walkResolvedComponentResult(rootComponent, repositoryLookup, "", resolvedComponents)
+        println("RESOLVED")
+        val resolvedConfiguration = ResolvedConfiguration(componentId(rootComponent), details.configurationName)
+        walkResolvedComponentResult(rootComponent, repositoryLookup, "", resolvedConfiguration)
 
-        val mapper = jacksonObjectMapper()
-        resolvedComponents.values.forEach {
-            println(mapper.writeValueAsString(it))
-        }
+        val mapper = jacksonObjectMapper().writerWithDefaultPrettyPrinter()
+        println(mapper.writeValueAsString(resolvedConfiguration))
     }
 
     private fun walkResolvedComponentResult(
         component: ResolvedComponentResult,
         repositoryLookup: RepositoryUrlLookup,
         prefix: String,
-        seenComponents: MutableMap<ComponentIdentifier, Dependency>
+        resolvedConfiguration: ResolvedConfiguration
     ) {
-        if (seenComponents.containsKey(component.id)) {
+        val componentId = componentId(component)
+        if (resolvedConfiguration.hasComponent(componentId)) {
             return
         }
+
         val repositoryUrl = repositoryLookup.doLookup(component)
         val resolvedDependencies = component.dependencies.filterIsInstance<ResolvedDependencyResult>().map { it.selected }
 
-        seenComponents[component.id] = Dependency(componentId(component), repositoryUrl, resolvedDependencies.map { componentId(it) })
+        resolvedConfiguration.components.add(ResolvedComponent(componentId, repositoryUrl, resolvedDependencies.map { componentId(it) }))
 
         resolvedDependencies
             .forEach {
-                walkResolvedComponentResult(it, repositoryLookup, "$prefix-", seenComponents)
+                walkResolvedComponentResult(it, repositoryLookup, "$prefix-", resolvedConfiguration)
             }
     }
 
