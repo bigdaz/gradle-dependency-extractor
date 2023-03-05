@@ -1,22 +1,26 @@
 package org.gradle.dependencyextractor
 
-import com.fasterxml.jackson.module.kotlin.jacksonObjectMapper
 import org.gradle.api.artifacts.component.ProjectComponentIdentifier
 import org.gradle.api.artifacts.result.ResolvedComponentResult
 import org.gradle.api.artifacts.result.ResolvedDependencyResult
 import org.gradle.api.internal.artifacts.configurations.ResolveConfigurationDependenciesBuildOperationType
+import org.gradle.api.services.BuildService
+import org.gradle.api.services.BuildServiceParameters
+import org.gradle.dependencyextractor.model.RecordingDependencyGraph
 import org.gradle.dependencyextractor.model.ResolvedComponent
 import org.gradle.dependencyextractor.model.ResolvedConfiguration
 import org.gradle.internal.operations.*
 import java.net.URI
 
-class DependencyExtractorService :
+abstract class DependencyExtractorService :
     BuildOperationListener,
+    BuildService<BuildServiceParameters.None>,
     AutoCloseable {
 
     init {
         println("Creating: DependencyExtractorService")
     }
+    private val dependencyGraph = RecordingDependencyGraph()
 
     override fun started(buildOperation: BuildOperationDescriptor, startEvent: OperationStartEvent) {
         // This method will never be called when registered in a `BuildServiceRegistry` (ie. Gradle 6.1 & higher)
@@ -45,13 +49,10 @@ class DependencyExtractorService :
         val repositoryLookup = RepositoryUrlLookup(details, result)
         val rootComponent = result.rootComponent
 
-        println()
-        println("RESOLVED")
         val resolvedConfiguration = ResolvedConfiguration(componentId(rootComponent), details.configurationName)
         walkResolvedComponentResult(rootComponent, repositoryLookup, "", resolvedConfiguration)
 
-        val mapper = jacksonObjectMapper().writerWithDefaultPrettyPrinter()
-        println(mapper.writeValueAsString(resolvedConfiguration))
+        dependencyGraph.recordResolvedConfiguration(resolvedConfiguration)
     }
 
     private fun walkResolvedComponentResult(
@@ -107,6 +108,7 @@ class DependencyExtractorService :
     }
 
     override fun close() {
+        dependencyGraph.close()
     }
 }
 

@@ -12,12 +12,10 @@ class DependencyExtractorSettingsPlugin: Plugin<Settings> {
         println("Applied dependency extractor plugin to Settings '${settings.rootProject.name}'")
         val gradle = settings.gradle as GradleInternal
 
-        val dependencyExtractorService = DependencyExtractorService()
-        val dependencyExtractorServiceProvider = gradle.services.get(ProviderFactory::class.java).provider { dependencyExtractorService }
-        gradle.services.get(BuildEventListenerRegistryInternal::class.java).onOperationCompletion(dependencyExtractorServiceProvider)
-
-        gradle.beforeProject {
-            it.plugins.apply(DependencyExtractorProjectPlugin::class.java)
-        }
+        val extractorServiceProvider = gradle.sharedServices.registerIfAbsent(
+            "dependencyExtractorService",
+            DependencyExtractorService::class.java,
+            {})
+        gradle.services.get(BuildEventListenerRegistryInternal::class.java).onOperationCompletion(extractorServiceProvider)
     }
 }
