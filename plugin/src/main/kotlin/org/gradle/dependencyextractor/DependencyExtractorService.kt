@@ -3,6 +3,7 @@ package org.gradle.dependencyextractor
 import org.gradle.api.artifacts.component.ProjectComponentIdentifier
 import org.gradle.api.artifacts.result.ResolvedComponentResult
 import org.gradle.api.artifacts.result.ResolvedDependencyResult
+import org.gradle.api.file.RegularFileProperty
 import org.gradle.api.internal.artifacts.configurations.ResolveConfigurationDependenciesBuildOperationType
 import org.gradle.api.services.BuildService
 import org.gradle.api.services.BuildServiceParameters
@@ -14,13 +15,16 @@ import java.net.URI
 
 abstract class DependencyExtractorService :
     BuildOperationListener,
-    BuildService<BuildServiceParameters.None>,
+    BuildService<DependencyExtractorService.Parameters>,
     AutoCloseable {
 
-    init {
-        println("Creating: DependencyExtractorService")
+    interface Parameters : BuildServiceParameters {
+        val outputFile: RegularFileProperty
     }
-    private val dependencyGraph = RecordingDependencyGraph()
+
+    private val dependencyGraph by lazy {
+        RecordingDependencyGraph(parameters.outputFile)
+    }
 
     override fun started(buildOperation: BuildOperationDescriptor, startEvent: OperationStartEvent) {
         // This method will never be called when registered in a `BuildServiceRegistry` (ie. Gradle 6.1 & higher)
