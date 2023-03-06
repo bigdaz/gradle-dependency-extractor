@@ -17,3 +17,13 @@ gradlePlugin {
         implementationClass = "org.gradle.dependencyextractor.DependencyExtractorSettingsPlugin"
     }
 }
+
+testing {
+    suites {
+        // Configure the built-in test suite
+        val test by getting(JvmTestSuite::class) {
+            // Use Kotlin Test framework
+            useKotlinTest()
+        }
+    }
+}
