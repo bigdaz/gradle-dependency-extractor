@@ -9,6 +9,7 @@ repositories {
 
 dependencies {
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin:2.12.1")
+    testImplementation("io.kotest:kotest-assertions-core:5.5.5")
 }
 
 gradlePlugin {

@@ -1,10 +1,11 @@
 package org.gradle.dependencyextractor
 
+import io.kotest.matchers.file.shouldBeAFile
+import io.kotest.matchers.file.shouldNotExist
+import io.kotest.matchers.string.shouldNotBeEmpty
 import org.gradle.testkit.runner.GradleRunner
 import java.io.File
 import kotlin.test.Test
-import kotlin.test.assertFalse
-import kotlin.test.assertTrue
 
 class DependencyExtractorTest {
     @Test
@@ -15,9 +16,8 @@ class DependencyExtractorTest {
         val sampleBuild = File("/Users/daz/dev/github/dependency-extractor-plugin/sample-projects/java-app")
         sampleBuild.copyRecursively(sampleCopy)
 
-        val outputFile = File("${sampleCopy}/.gradle/dependency-graph.json")
-
-        assertFalse(outputFile.exists())
+        val dependencyGraphFile = File("${sampleCopy}/.gradle/dependency-graph.json")
+        dependencyGraphFile.shouldNotExist()
 
         // Run the build
         val runner = GradleRunner.create()
@@ -26,8 +26,12 @@ class DependencyExtractorTest {
             .withProjectDir(sampleCopy)
         val result = runner.build()
 
-        // Verify the result
-        assertTrue(result.output.isNotEmpty())
-        assertTrue(outputFile.exists())
+        // Verify the output
+        result.output.shouldNotBeEmpty()
+
+        // Verify the generated graph
+        dependencyGraphFile.shouldBeAFile()
+        val graph = dependencyGraphFile.readText()
+        graph.shouldNotBeEmpty()
     }
 }
