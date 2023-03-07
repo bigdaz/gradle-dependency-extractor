@@ -1,0 +1,25 @@
+[ {
+  "rootId" : ":app",
+  "name" : "classpath",
+  "components" : [ {
+    "id" : ":app",
+    "repositoryUrl" : null,
+    "dependencies" : [ ]
+  } ]
+}, {
+  "rootId" : ":list",
+  "name" : "classpath",
+  "components" : [ {
+    "id" : ":list",
+    "repositoryUrl" : null,
+    "dependencies" : [ ]
+  } ]
+}, {
+  "rootId" : ":utilities",
+  "name" : "classpath",
+  "components" : [ {
+    "id" : ":utilities",
+    "repositoryUrl" : null,
+    "dependencies" : [ ]
+  } ]
+} ]
