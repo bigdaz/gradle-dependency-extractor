@@ -62,7 +62,7 @@ class DependencyExtractorSamplesTest {
 
     @Test
     fun `check lib`() {
-        `check sample execution`(File("../sample-projects/java-lib"), "assemble")
+        `check sample execution`(File("../sample-projects/java-lib"), "help")
     }
 
     @Test

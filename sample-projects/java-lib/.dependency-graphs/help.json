@@ -1,9 +1,8 @@
 [ {
-  "path" : ":buildSrc:",
+  "rootId" : "project :buildSrc",
   "name" : "compileClasspath",
-  "rootComponent" : ":",
   "components" : [ {
-    "id" : ":",
+    "id" : "project :buildSrc",
     "repositoryUrl" : null,
     "dependencies" : [ "org.apache.commons:commons-math3:3.6.1" ]
   }, {
@@ -12,33 +11,30 @@
     "dependencies" : [ ]
   } ]
 }, {
-  "path" : ":buildSrc:",
+  "rootId" : "project :buildSrc",
   "name" : "annotationProcessor",
-  "rootComponent" : ":",
   "components" : [ {
-    "id" : ":",
+    "id" : "project :buildSrc",
     "repositoryUrl" : null,
     "dependencies" : [ ]
   } ]
 }, {
-  "path" : ":buildSrc:",
+  "rootId" : "project :buildSrc",
   "name" : "buildScriptClasspath",
-  "rootComponent" : ":",
   "components" : [ {
-    "id" : ":",
+    "id" : "project :buildSrc",
     "repositoryUrl" : null,
-    "dependencies" : [ ":", "org.apache.commons:commons-math3:3.6.1" ]
+    "dependencies" : [ "project :buildSrc", "org.apache.commons:commons-math3:3.6.1" ]
   }, {
     "id" : "org.apache.commons:commons-math3:3.6.1",
     "repositoryUrl" : "https://repo.maven.apache.org/maven2/",
     "dependencies" : [ ]
   } ]
 }, {
-  "path" : ":",
+  "rootId" : "project :",
   "name" : "classpath",
-  "rootComponent" : ":",
   "components" : [ {
-    "id" : ":",
+    "id" : "project :",
     "repositoryUrl" : null,
     "dependencies" : [ "gradle.plugin.org.example.greeting:greeting-plugin-example:1.0", "com.github.spotbugs-base:com.github.spotbugs-base.gradle.plugin:5.0.13" ]
   }, {

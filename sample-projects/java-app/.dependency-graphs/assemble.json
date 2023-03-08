@@ -1,18 +1,16 @@
 [ {
-  "path" : ":app",
+  "rootId" : "project :app",
   "name" : "classpath",
-  "rootComponent" : ":app",
   "components" : [ {
-    "id" : ":app",
+    "id" : "project :app",
     "repositoryUrl" : null,
     "dependencies" : [ ]
   } ]
 }, {
-  "path" : ":build-logic:",
+  "rootId" : "project :build-logic",
   "name" : "compileClasspath",
-  "rootComponent" : ":",
   "components" : [ {
-    "id" : ":",
+    "id" : "project :build-logic",
     "repositoryUrl" : null,
     "dependencies" : [ "org.slf4j:slf4j-api:2.0.6" ]
   }, {
@@ -21,24 +19,22 @@
     "dependencies" : [ ]
   } ]
 }, {
-  "path" : ":build-logic:",
+  "rootId" : "project :build-logic",
   "name" : "annotationProcessor",
-  "rootComponent" : ":",
   "components" : [ {
-    "id" : ":",
+    "id" : "project :build-logic",
     "repositoryUrl" : null,
     "dependencies" : [ ]
   } ]
 }, {
-  "path" : ":list",
+  "rootId" : "project :list",
   "name" : "classpath",
-  "rootComponent" : ":list",
   "components" : [ {
-    "id" : ":list",
+    "id" : "project :list",
     "repositoryUrl" : null,
-    "dependencies" : [ ":" ]
+    "dependencies" : [ "project :build-logic" ]
   }, {
-    "id" : ":",
+    "id" : "project :build-logic",
     "repositoryUrl" : null,
     "dependencies" : [ "org.slf4j:slf4j-api:2.0.6" ]
   }, {
@@ -47,62 +43,56 @@
     "dependencies" : [ ]
   } ]
 }, {
-  "path" : ":utilities",
+  "rootId" : "project :utilities",
   "name" : "classpath",
-  "rootComponent" : ":utilities",
   "components" : [ {
-    "id" : ":utilities",
+    "id" : "project :utilities",
     "repositoryUrl" : null,
     "dependencies" : [ ]
   } ]
 }, {
-  "path" : ":list",
+  "rootId" : "project :list",
   "name" : "compileClasspath",
-  "rootComponent" : ":list",
   "components" : [ {
-    "id" : ":list",
+    "id" : "project :list",
     "repositoryUrl" : null,
     "dependencies" : [ ]
   } ]
 }, {
-  "path" : ":list",
+  "rootId" : "project :list",
   "name" : "annotationProcessor",
-  "rootComponent" : ":list",
   "components" : [ {
-    "id" : ":list",
+    "id" : "project :list",
     "repositoryUrl" : null,
     "dependencies" : [ ]
   } ]
 }, {
-  "path" : ":utilities",
+  "rootId" : "project :utilities",
   "name" : "compileClasspath",
-  "rootComponent" : ":utilities",
   "components" : [ {
-    "id" : ":utilities",
+    "id" : "project :utilities",
     "repositoryUrl" : null,
-    "dependencies" : [ ":list" ]
+    "dependencies" : [ "project :list" ]
   }, {
-    "id" : ":list",
+    "id" : "project :list",
     "repositoryUrl" : null,
     "dependencies" : [ ]
   } ]
 }, {
-  "path" : ":utilities",
+  "rootId" : "project :utilities",
   "name" : "annotationProcessor",
-  "rootComponent" : ":utilities",
   "components" : [ {
-    "id" : ":utilities",
+    "id" : "project :utilities",
     "repositoryUrl" : null,
     "dependencies" : [ ]
   } ]
 }, {
-  "path" : ":app",
+  "rootId" : "project :app",
   "name" : "compileClasspath",
-  "rootComponent" : ":app",
   "components" : [ {
-    "id" : ":app",
+    "id" : "project :app",
     "repositoryUrl" : null,
-    "dependencies" : [ "org.apache.commons:commons-text:1.9", ":utilities" ]
+    "dependencies" : [ "org.apache.commons:commons-text:1.9", "project :utilities" ]
   }, {
     "id" : "org.apache.commons:commons-text:1.9",
     "repositoryUrl" : "https://repo.maven.apache.org/maven2/",
@@ -112,31 +102,29 @@
     "repositoryUrl" : "https://repo.maven.apache.org/maven2/",
     "dependencies" : [ ]
   }, {
-    "id" : ":utilities",
+    "id" : "project :utilities",
     "repositoryUrl" : null,
-    "dependencies" : [ ":list" ]
+    "dependencies" : [ "project :list" ]
   }, {
-    "id" : ":list",
+    "id" : "project :list",
     "repositoryUrl" : null,
     "dependencies" : [ ]
   } ]
 }, {
-  "path" : ":app",
+  "rootId" : "project :app",
   "name" : "annotationProcessor",
-  "rootComponent" : ":app",
   "components" : [ {
-    "id" : ":app",
+    "id" : "project :app",
     "repositoryUrl" : null,
     "dependencies" : [ ]
   } ]
 }, {
-  "path" : ":app",
+  "rootId" : "project :app",
   "name" : "runtimeClasspath",
-  "rootComponent" : ":app",
   "components" : [ {
-    "id" : ":app",
+    "id" : "project :app",
     "repositoryUrl" : null,
-    "dependencies" : [ "org.apache.commons:commons-text:1.9", ":utilities" ]
+    "dependencies" : [ "org.apache.commons:commons-text:1.9", "project :utilities" ]
   }, {
     "id" : "org.apache.commons:commons-text:1.9",
     "repositoryUrl" : "https://repo.maven.apache.org/maven2/",
@@ -146,11 +134,11 @@
     "repositoryUrl" : "https://repo.maven.apache.org/maven2/",
     "dependencies" : [ ]
   }, {
-    "id" : ":utilities",
+    "id" : "project :utilities",
     "repositoryUrl" : null,
-    "dependencies" : [ ":list" ]
+    "dependencies" : [ "project :list" ]
   }, {
-    "id" : ":list",
+    "id" : "project :list",
     "repositoryUrl" : null,
     "dependencies" : [ ]
   } ]

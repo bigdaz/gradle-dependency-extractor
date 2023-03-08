@@ -52,19 +52,13 @@ abstract class DependencyExtractorService :
     ) {
         val repositoryLookup = RepositoryUrlLookup(details, result)
         val rootComponent = result.rootComponent
-        val projectPath =
-                (rootComponent.id as? ProjectComponentIdentifier)?.projectPath
-                        ?: details.projectPath
 
-        if (projectPath == null) {
-            // TODO Handle detached configurations
-            return
-        }
+        // Ignore detached configurations for now
+        (rootComponent.id as? ProjectComponentIdentifier)?.projectPath
+                ?: details.projectPath
+                ?: return
 
-        val path = if (details.buildPath == ":") projectPath else details.buildPath + projectPath
-        val name = details.configurationName
-
-        val resolvedConfiguration = ResolvedConfiguration(path, name, componentId(rootComponent))
+        val resolvedConfiguration = ResolvedConfiguration(componentId(rootComponent), details.configurationName)
         walkResolvedComponentResult(rootComponent, repositoryLookup, "", resolvedConfiguration)
 
         dependencyGraph.recordResolvedConfiguration(resolvedConfiguration)
@@ -93,11 +87,7 @@ abstract class DependencyExtractorService :
     }
 
     private fun componentId(component: ResolvedComponentResult): String {
-        val componentId = component.id
-        if (componentId is ProjectComponentIdentifier) {
-            return componentId.projectPath
-        }
-        return componentId.displayName
+        return component.id.displayName
     }
 
     private class RepositoryUrlLookup(
