@@ -1,5 +1,6 @@
 plugins {
     application
+    id("org.test.build-logic-plugin")
 }
 
 repositories {

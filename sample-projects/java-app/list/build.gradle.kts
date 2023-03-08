@@ -1,6 +1,5 @@
 plugins {
     `java-library`
-    id("org.test.build-logic-plugin")
 }
 
 repositories {

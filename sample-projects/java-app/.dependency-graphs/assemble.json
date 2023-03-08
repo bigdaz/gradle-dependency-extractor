@@ -1,12 +1,4 @@
 [ {
-  "rootId" : "project :app",
-  "name" : "classpath",
-  "components" : [ {
-    "id" : "project :app",
-    "repositoryUrl" : null,
-    "dependencies" : [ ]
-  } ]
-}, {
   "rootId" : "project :build-logic",
   "name" : "compileClasspath",
   "components" : [ {
@@ -27,10 +19,10 @@
     "dependencies" : [ ]
   } ]
 }, {
-  "rootId" : "project :list",
+  "rootId" : "project :app",
   "name" : "classpath",
   "components" : [ {
-    "id" : "project :list",
+    "id" : "project :app",
     "repositoryUrl" : null,
     "dependencies" : [ "project :build-logic" ]
   }, {
@@ -43,11 +35,27 @@
     "dependencies" : [ ]
   } ]
 }, {
+  "rootId" : "project :list",
+  "name" : "classpath",
+  "components" : [ {
+    "id" : "project :list",
+    "repositoryUrl" : null,
+    "dependencies" : [ ]
+  } ]
+}, {
   "rootId" : "project :utilities",
   "name" : "classpath",
   "components" : [ {
     "id" : "project :utilities",
     "repositoryUrl" : null,
+    "dependencies" : [ "project :build-logic" ]
+  }, {
+    "id" : "project :build-logic",
+    "repositoryUrl" : null,
+    "dependencies" : [ "org.slf4j:slf4j-api:2.0.6" ]
+  }, {
+    "id" : "org.slf4j:slf4j-api:2.0.6",
+    "repositoryUrl" : "https://plugins.gradle.org/m2",
     "dependencies" : [ ]
   } ]
 }, {
