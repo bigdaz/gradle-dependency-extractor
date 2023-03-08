@@ -1,6 +1,5 @@
 package org.gradle.dependencyextractor
 
-import org.gradle.api.artifacts.component.ProjectComponentIdentifier
 import org.gradle.api.artifacts.result.ResolvedComponentResult
 import org.gradle.api.artifacts.result.ResolvedDependencyResult
 import org.gradle.api.file.RegularFileProperty
@@ -53,10 +52,10 @@ abstract class DependencyExtractorService :
         val repositoryLookup = RepositoryUrlLookup(details, result)
         val rootComponent = result.rootComponent
 
-        // Ignore detached configurations for now
-        (rootComponent.id as? ProjectComponentIdentifier)?.projectPath
-                ?: details.projectPath
-                ?: return
+        // TODO("Handle detached configurations or find a better way to detect")
+        if (details.configurationName.startsWith("detachedConfiguration")) {
+            return
+        }
 
         val resolvedConfiguration = ResolvedConfiguration(componentId(rootComponent), details.configurationName)
         walkResolvedComponentResult(rootComponent, repositoryLookup, "", resolvedConfiguration)
