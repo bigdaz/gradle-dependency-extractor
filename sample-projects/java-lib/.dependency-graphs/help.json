@@ -34,11 +34,11 @@
     "dependencies" : [ ]
   } ]
 }, {
-  "path" : ":lib",
+  "path" : ":",
   "name" : "classpath",
-  "rootComponent" : ":lib",
+  "rootComponent" : ":",
   "components" : [ {
-    "id" : ":lib",
+    "id" : ":",
     "repositoryUrl" : null,
     "dependencies" : [ "gradle.plugin.org.example.greeting:greeting-plugin-example:1.0", "com.github.spotbugs-base:com.github.spotbugs-base.gradle.plugin:5.0.13" ]
   }, {

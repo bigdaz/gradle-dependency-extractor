@@ -7,4 +7,3 @@ plugins {
 }
 
 rootProject.name = 'java-lib'
-include('lib')
