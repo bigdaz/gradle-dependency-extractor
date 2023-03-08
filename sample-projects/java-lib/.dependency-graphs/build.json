@@ -1,18 +1,7 @@
 [ {
-  "rootId" : "unspecified:unspecified:unspecified",
-  "name" : "detachedConfiguration1",
-  "components" : [ {
-    "id" : "unspecified:unspecified:unspecified",
-    "repositoryUrl" : null,
-    "dependencies" : [ "com.github.spotbugs-base:com.github.spotbugs-base.gradle.plugin:5.0.13" ]
-  }, {
-    "id" : "com.github.spotbugs-base:com.github.spotbugs-base.gradle.plugin:5.0.13",
-    "repositoryUrl" : "https://plugins.gradle.org/m2",
-    "dependencies" : [ ]
-  } ]
-}, {
-  "rootId" : ":lib",
+  "path" : ":lib",
   "name" : "classpath",
+  "rootComponent" : ":lib",
   "components" : [ {
     "id" : ":lib",
     "repositoryUrl" : null,
@@ -31,8 +20,9 @@
     "dependencies" : [ ]
   } ]
 }, {
-  "rootId" : ":lib",
+  "path" : ":lib",
   "name" : "compileClasspath",
+  "rootComponent" : ":lib",
   "components" : [ {
     "id" : ":lib",
     "repositoryUrl" : null,
@@ -71,16 +61,18 @@
     "dependencies" : [ ]
   } ]
 }, {
-  "rootId" : ":lib",
+  "path" : ":lib",
   "name" : "annotationProcessor",
+  "rootComponent" : ":lib",
   "components" : [ {
     "id" : ":lib",
     "repositoryUrl" : null,
     "dependencies" : [ ]
   } ]
 }, {
-  "rootId" : ":lib",
+  "path" : ":lib",
   "name" : "testCompileClasspath",
+  "rootComponent" : ":lib",
   "components" : [ {
     "id" : ":lib",
     "repositoryUrl" : null,
@@ -151,8 +143,9 @@
     "dependencies" : [ ]
   } ]
 }, {
-  "rootId" : ":lib",
+  "path" : ":lib",
   "name" : "detachedConfiguration1",
+  "rootComponent" : ":lib",
   "components" : [ {
     "id" : ":lib",
     "repositoryUrl" : null,
@@ -251,16 +244,18 @@
     "dependencies" : [ "org.codehaus.groovy:groovy:3.0.12" ]
   } ]
 }, {
-  "rootId" : ":lib",
+  "path" : ":lib",
   "name" : "testAnnotationProcessor",
+  "rootComponent" : ":lib",
   "components" : [ {
     "id" : ":lib",
     "repositoryUrl" : null,
     "dependencies" : [ ]
   } ]
 }, {
-  "rootId" : ":lib",
+  "path" : ":lib",
   "name" : "testRuntimeClasspath",
+  "rootComponent" : ":lib",
   "components" : [ {
     "id" : ":lib",
     "repositoryUrl" : null,

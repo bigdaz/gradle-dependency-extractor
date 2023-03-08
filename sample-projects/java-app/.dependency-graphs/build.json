@@ -1,46 +1,52 @@
 [ {
-  "rootId" : ":app",
+  "path" : ":app",
   "name" : "classpath",
+  "rootComponent" : ":app",
   "components" : [ {
     "id" : ":app",
     "repositoryUrl" : null,
     "dependencies" : [ ]
   } ]
 }, {
-  "rootId" : ":list",
+  "path" : ":list",
   "name" : "classpath",
+  "rootComponent" : ":list",
   "components" : [ {
     "id" : ":list",
     "repositoryUrl" : null,
     "dependencies" : [ ]
   } ]
 }, {
-  "rootId" : ":utilities",
+  "path" : ":utilities",
   "name" : "classpath",
+  "rootComponent" : ":utilities",
   "components" : [ {
     "id" : ":utilities",
     "repositoryUrl" : null,
     "dependencies" : [ ]
   } ]
 }, {
-  "rootId" : ":list",
+  "path" : ":list",
   "name" : "compileClasspath",
+  "rootComponent" : ":list",
   "components" : [ {
     "id" : ":list",
     "repositoryUrl" : null,
     "dependencies" : [ ]
   } ]
 }, {
-  "rootId" : ":list",
+  "path" : ":list",
   "name" : "annotationProcessor",
+  "rootComponent" : ":list",
   "components" : [ {
     "id" : ":list",
     "repositoryUrl" : null,
     "dependencies" : [ ]
   } ]
 }, {
-  "rootId" : ":utilities",
+  "path" : ":utilities",
   "name" : "compileClasspath",
+  "rootComponent" : ":utilities",
   "components" : [ {
     "id" : ":utilities",
     "repositoryUrl" : null,
@@ -51,16 +57,18 @@
     "dependencies" : [ ]
   } ]
 }, {
-  "rootId" : ":utilities",
+  "path" : ":utilities",
   "name" : "annotationProcessor",
+  "rootComponent" : ":utilities",
   "components" : [ {
     "id" : ":utilities",
     "repositoryUrl" : null,
     "dependencies" : [ ]
   } ]
 }, {
-  "rootId" : ":app",
+  "path" : ":app",
   "name" : "compileClasspath",
+  "rootComponent" : ":app",
   "components" : [ {
     "id" : ":app",
     "repositoryUrl" : null,
@@ -83,16 +91,18 @@
     "dependencies" : [ ]
   } ]
 }, {
-  "rootId" : ":app",
+  "path" : ":app",
   "name" : "annotationProcessor",
+  "rootComponent" : ":app",
   "components" : [ {
     "id" : ":app",
     "repositoryUrl" : null,
     "dependencies" : [ ]
   } ]
 }, {
-  "rootId" : ":app",
+  "path" : ":app",
   "name" : "runtimeClasspath",
+  "rootComponent" : ":app",
   "components" : [ {
     "id" : ":app",
     "repositoryUrl" : null,
@@ -115,8 +125,9 @@
     "dependencies" : [ ]
   } ]
 }, {
-  "rootId" : ":app",
+  "path" : ":app",
   "name" : "testCompileClasspath",
+  "rootComponent" : ":app",
   "components" : [ {
     "id" : ":app",
     "repositoryUrl" : null,
@@ -167,16 +178,18 @@
     "dependencies" : [ "org.junit:junit-bom:5.9.1", "org.junit.jupiter:junit-jupiter-api:5.9.1", "org.apiguardian:apiguardian-api:1.1.2" ]
   } ]
 }, {
-  "rootId" : ":app",
+  "path" : ":app",
   "name" : "testAnnotationProcessor",
+  "rootComponent" : ":app",
   "components" : [ {
     "id" : ":app",
     "repositoryUrl" : null,
     "dependencies" : [ ]
   } ]
 }, {
-  "rootId" : ":app",
+  "path" : ":app",
   "name" : "testRuntimeClasspath",
+  "rootComponent" : ":app",
   "components" : [ {
     "id" : ":app",
     "repositoryUrl" : null,
@@ -231,8 +244,9 @@
     "dependencies" : [ "org.junit:junit-bom:5.9.1", "org.junit.jupiter:junit-jupiter-api:5.9.1" ]
   } ]
 }, {
-  "rootId" : ":list",
+  "path" : ":list",
   "name" : "testCompileClasspath",
+  "rootComponent" : ":list",
   "components" : [ {
     "id" : ":list",
     "repositoryUrl" : null,
@@ -267,16 +281,18 @@
     "dependencies" : [ "org.junit:junit-bom:5.9.1", "org.junit.jupiter:junit-jupiter-api:5.9.1", "org.apiguardian:apiguardian-api:1.1.2" ]
   } ]
 }, {
-  "rootId" : ":list",
+  "path" : ":list",
   "name" : "testAnnotationProcessor",
+  "rootComponent" : ":list",
   "components" : [ {
     "id" : ":list",
     "repositoryUrl" : null,
     "dependencies" : [ ]
   } ]
 }, {
-  "rootId" : ":list",
+  "path" : ":list",
   "name" : "testRuntimeClasspath",
+  "rootComponent" : ":list",
   "components" : [ {
     "id" : ":list",
     "repositoryUrl" : null,

@@ -1,22 +1,25 @@
 [ {
-  "rootId" : ":app",
+  "path" : ":app",
   "name" : "classpath",
+  "rootComponent" : ":app",
   "components" : [ {
     "id" : ":app",
     "repositoryUrl" : null,
     "dependencies" : [ ]
   } ]
 }, {
-  "rootId" : ":list",
+  "path" : ":list",
   "name" : "classpath",
+  "rootComponent" : ":list",
   "components" : [ {
     "id" : ":list",
     "repositoryUrl" : null,
     "dependencies" : [ ]
   } ]
 }, {
-  "rootId" : ":utilities",
+  "path" : ":utilities",
   "name" : "classpath",
+  "rootComponent" : ":utilities",
   "components" : [ {
     "id" : ":utilities",
     "repositoryUrl" : null,

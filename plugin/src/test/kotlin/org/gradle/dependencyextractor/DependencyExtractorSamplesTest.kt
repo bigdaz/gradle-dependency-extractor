@@ -5,6 +5,7 @@ import io.kotest.matchers.file.shouldExist
 import io.kotest.matchers.shouldBe
 import io.kotest.matchers.string.shouldNotBeEmpty
 import org.gradle.testkit.runner.GradleRunner
+import org.junit.jupiter.api.Test
 import org.junit.jupiter.params.ParameterizedTest
 import org.junit.jupiter.params.provider.Arguments
 import org.junit.jupiter.params.provider.MethodSource
@@ -40,6 +41,7 @@ class DependencyExtractorSamplesTest {
 
         // Run the build
         val runner = GradleRunner.create()
+            .withDebug(true)
             .forwardOutput()
             .withArguments(taskName)
             .withProjectDir(sampleCopy)
@@ -53,6 +55,17 @@ class DependencyExtractorSamplesTest {
         val graph = dependencyGraphFile.readText()
         val expectedGraph = expectedDependencyGraphFile.readText()
 
+        println(graph)
+
         graph.shouldBe(expectedGraph.trim())
     }
-}
+
+    @Test
+    fun `check lib`() {
+        `check sample execution`(File("../sample-projects/java-lib"), "assemble")
+    }
+
+    @Test
+    fun `check app`() {
+        `check sample execution`(File("../sample-projects/java-app"), "assemble")
+    }}
