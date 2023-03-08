@@ -9,4 +9,5 @@ plugins {
 
 rootProject.name = "java-app"
 
-include("app", "list", "utilities")
+includeBuild("list")
+include("app", "utilities")

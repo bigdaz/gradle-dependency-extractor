@@ -1,20 +1,8 @@
 [ {
-  "rootId" : "project :build-logic",
-  "name" : "compileClasspath",
+  "rootId" : "project :dependency-extractor-plugin:list",
+  "name" : "classpath",
   "components" : [ {
-    "id" : "project :build-logic",
-    "repositoryUrl" : null,
-    "dependencies" : [ "org.slf4j:slf4j-api:2.0.6" ]
-  }, {
-    "id" : "org.slf4j:slf4j-api:2.0.6",
-    "repositoryUrl" : "https://repo.maven.apache.org/maven2/",
-    "dependencies" : [ ]
-  } ]
-}, {
-  "rootId" : "project :build-logic",
-  "name" : "annotationProcessor",
-  "components" : [ {
-    "id" : "project :build-logic",
+    "id" : "project :dependency-extractor-plugin:list",
     "repositoryUrl" : null,
     "dependencies" : [ ]
   } ]
@@ -35,11 +23,23 @@
     "dependencies" : [ ]
   } ]
 }, {
-  "rootId" : "project :list",
-  "name" : "classpath",
+  "rootId" : "project :build-logic",
+  "name" : "annotationProcessor",
   "components" : [ {
-    "id" : "project :list",
+    "id" : "project :build-logic",
     "repositoryUrl" : null,
+    "dependencies" : [ ]
+  } ]
+}, {
+  "rootId" : "project :build-logic",
+  "name" : "compileClasspath",
+  "components" : [ {
+    "id" : "project :build-logic",
+    "repositoryUrl" : null,
+    "dependencies" : [ "org.slf4j:slf4j-api:2.0.6" ]
+  }, {
+    "id" : "org.slf4j:slf4j-api:2.0.6",
+    "repositoryUrl" : "https://repo.maven.apache.org/maven2/",
     "dependencies" : [ ]
   } ]
 }, {
@@ -56,74 +56,6 @@
   }, {
     "id" : "org.slf4j:slf4j-api:2.0.6",
     "repositoryUrl" : "https://plugins.gradle.org/m2",
-    "dependencies" : [ ]
-  } ]
-}, {
-  "rootId" : "project :list",
-  "name" : "compileClasspath",
-  "components" : [ {
-    "id" : "project :list",
-    "repositoryUrl" : null,
-    "dependencies" : [ ]
-  } ]
-}, {
-  "rootId" : "project :list",
-  "name" : "annotationProcessor",
-  "components" : [ {
-    "id" : "project :list",
-    "repositoryUrl" : null,
-    "dependencies" : [ ]
-  } ]
-}, {
-  "rootId" : "project :utilities",
-  "name" : "compileClasspath",
-  "components" : [ {
-    "id" : "project :utilities",
-    "repositoryUrl" : null,
-    "dependencies" : [ "project :list" ]
-  }, {
-    "id" : "project :list",
-    "repositoryUrl" : null,
-    "dependencies" : [ ]
-  } ]
-}, {
-  "rootId" : "project :utilities",
-  "name" : "annotationProcessor",
-  "components" : [ {
-    "id" : "project :utilities",
-    "repositoryUrl" : null,
-    "dependencies" : [ ]
-  } ]
-}, {
-  "rootId" : "project :app",
-  "name" : "compileClasspath",
-  "components" : [ {
-    "id" : "project :app",
-    "repositoryUrl" : null,
-    "dependencies" : [ "org.apache.commons:commons-text:1.9", "project :utilities" ]
-  }, {
-    "id" : "org.apache.commons:commons-text:1.9",
-    "repositoryUrl" : "https://repo.maven.apache.org/maven2/",
-    "dependencies" : [ "org.apache.commons:commons-lang3:3.11" ]
-  }, {
-    "id" : "org.apache.commons:commons-lang3:3.11",
-    "repositoryUrl" : "https://repo.maven.apache.org/maven2/",
-    "dependencies" : [ ]
-  }, {
-    "id" : "project :utilities",
-    "repositoryUrl" : null,
-    "dependencies" : [ "project :list" ]
-  }, {
-    "id" : "project :list",
-    "repositoryUrl" : null,
-    "dependencies" : [ ]
-  } ]
-}, {
-  "rootId" : "project :app",
-  "name" : "annotationProcessor",
-  "components" : [ {
-    "id" : "project :app",
-    "repositoryUrl" : null,
     "dependencies" : [ ]
   } ]
 }, {
@@ -144,19 +76,27 @@
   }, {
     "id" : "project :utilities",
     "repositoryUrl" : null,
-    "dependencies" : [ "project :list" ]
+    "dependencies" : [ "project :dependency-extractor-plugin:list" ]
   }, {
-    "id" : "project :list",
+    "id" : "project :dependency-extractor-plugin:list",
     "repositoryUrl" : null,
     "dependencies" : [ ]
   } ]
 }, {
   "rootId" : "project :app",
-  "name" : "testCompileClasspath",
+  "name" : "annotationProcessor",
   "components" : [ {
     "id" : "project :app",
     "repositoryUrl" : null,
-    "dependencies" : [ "org.apache.commons:commons-text:1.9", "project :utilities", "org.junit.jupiter:junit-jupiter:5.9.1" ]
+    "dependencies" : [ ]
+  } ]
+}, {
+  "rootId" : "project :app",
+  "name" : "compileClasspath",
+  "components" : [ {
+    "id" : "project :app",
+    "repositoryUrl" : null,
+    "dependencies" : [ "org.apache.commons:commons-text:1.9", "project :utilities" ]
   }, {
     "id" : "org.apache.commons:commons-text:1.9",
     "repositoryUrl" : "https://repo.maven.apache.org/maven2/",
@@ -168,45 +108,29 @@
   }, {
     "id" : "project :utilities",
     "repositoryUrl" : null,
-    "dependencies" : [ "project :list" ]
+    "dependencies" : [ "project :dependency-extractor-plugin:list" ]
   }, {
-    "id" : "project :list",
+    "id" : "project :dependency-extractor-plugin:list",
     "repositoryUrl" : null,
     "dependencies" : [ ]
-  }, {
-    "id" : "org.junit.jupiter:junit-jupiter:5.9.1",
-    "repositoryUrl" : "https://repo.maven.apache.org/maven2/",
-    "dependencies" : [ "org.junit:junit-bom:5.9.1", "org.junit.jupiter:junit-jupiter-api:5.9.1", "org.junit.jupiter:junit-jupiter-params:5.9.1" ]
-  }, {
-    "id" : "org.junit:junit-bom:5.9.1",
-    "repositoryUrl" : "https://repo.maven.apache.org/maven2/",
-    "dependencies" : [ "org.junit.jupiter:junit-jupiter:5.9.1", "org.junit.jupiter:junit-jupiter-api:5.9.1", "org.junit.jupiter:junit-jupiter-params:5.9.1", "org.junit.platform:junit-platform-commons:1.9.1" ]
-  }, {
-    "id" : "org.junit.jupiter:junit-jupiter-api:5.9.1",
-    "repositoryUrl" : "https://repo.maven.apache.org/maven2/",
-    "dependencies" : [ "org.junit:junit-bom:5.9.1", "org.opentest4j:opentest4j:1.2.0", "org.junit.platform:junit-platform-commons:1.9.1", "org.apiguardian:apiguardian-api:1.1.2" ]
-  }, {
-    "id" : "org.opentest4j:opentest4j:1.2.0",
-    "repositoryUrl" : "https://repo.maven.apache.org/maven2/",
-    "dependencies" : [ ]
-  }, {
-    "id" : "org.junit.platform:junit-platform-commons:1.9.1",
-    "repositoryUrl" : "https://repo.maven.apache.org/maven2/",
-    "dependencies" : [ "org.junit:junit-bom:5.9.1", "org.apiguardian:apiguardian-api:1.1.2" ]
-  }, {
-    "id" : "org.apiguardian:apiguardian-api:1.1.2",
-    "repositoryUrl" : "https://repo.maven.apache.org/maven2/",
-    "dependencies" : [ ]
-  }, {
-    "id" : "org.junit.jupiter:junit-jupiter-params:5.9.1",
-    "repositoryUrl" : "https://repo.maven.apache.org/maven2/",
-    "dependencies" : [ "org.junit:junit-bom:5.9.1", "org.junit.jupiter:junit-jupiter-api:5.9.1", "org.apiguardian:apiguardian-api:1.1.2" ]
   } ]
 }, {
-  "rootId" : "project :app",
-  "name" : "testAnnotationProcessor",
+  "rootId" : "project :utilities",
+  "name" : "annotationProcessor",
   "components" : [ {
-    "id" : "project :app",
+    "id" : "project :utilities",
+    "repositoryUrl" : null,
+    "dependencies" : [ ]
+  } ]
+}, {
+  "rootId" : "project :utilities",
+  "name" : "compileClasspath",
+  "components" : [ {
+    "id" : "project :utilities",
+    "repositoryUrl" : null,
+    "dependencies" : [ "project :dependency-extractor-plugin:list" ]
+  }, {
+    "id" : "project :dependency-extractor-plugin:list",
     "repositoryUrl" : null,
     "dependencies" : [ ]
   } ]
@@ -228,9 +152,9 @@
   }, {
     "id" : "project :utilities",
     "repositoryUrl" : null,
-    "dependencies" : [ "project :list" ]
+    "dependencies" : [ "project :dependency-extractor-plugin:list" ]
   }, {
-    "id" : "project :list",
+    "id" : "project :dependency-extractor-plugin:list",
     "repositoryUrl" : null,
     "dependencies" : [ ]
   }, {
@@ -267,12 +191,36 @@
     "dependencies" : [ "org.junit:junit-bom:5.9.1", "org.junit.jupiter:junit-jupiter-api:5.9.1" ]
   } ]
 }, {
-  "rootId" : "project :list",
+  "rootId" : "project :app",
+  "name" : "testAnnotationProcessor",
+  "components" : [ {
+    "id" : "project :app",
+    "repositoryUrl" : null,
+    "dependencies" : [ ]
+  } ]
+}, {
+  "rootId" : "project :app",
   "name" : "testCompileClasspath",
   "components" : [ {
-    "id" : "project :list",
+    "id" : "project :app",
     "repositoryUrl" : null,
-    "dependencies" : [ "org.junit.jupiter:junit-jupiter:5.9.1" ]
+    "dependencies" : [ "org.apache.commons:commons-text:1.9", "project :utilities", "org.junit.jupiter:junit-jupiter:5.9.1" ]
+  }, {
+    "id" : "org.apache.commons:commons-text:1.9",
+    "repositoryUrl" : "https://repo.maven.apache.org/maven2/",
+    "dependencies" : [ "org.apache.commons:commons-lang3:3.11" ]
+  }, {
+    "id" : "org.apache.commons:commons-lang3:3.11",
+    "repositoryUrl" : "https://repo.maven.apache.org/maven2/",
+    "dependencies" : [ ]
+  }, {
+    "id" : "project :utilities",
+    "repositoryUrl" : null,
+    "dependencies" : [ "project :dependency-extractor-plugin:list" ]
+  }, {
+    "id" : "project :dependency-extractor-plugin:list",
+    "repositoryUrl" : null,
+    "dependencies" : [ ]
   }, {
     "id" : "org.junit.jupiter:junit-jupiter:5.9.1",
     "repositoryUrl" : "https://repo.maven.apache.org/maven2/",
@@ -303,20 +251,16 @@
     "dependencies" : [ "org.junit:junit-bom:5.9.1", "org.junit.jupiter:junit-jupiter-api:5.9.1", "org.apiguardian:apiguardian-api:1.1.2" ]
   } ]
 }, {
-  "rootId" : "project :list",
-  "name" : "testAnnotationProcessor",
-  "components" : [ {
-    "id" : "project :list",
-    "repositoryUrl" : null,
-    "dependencies" : [ ]
-  } ]
-}, {
-  "rootId" : "project :list",
+  "rootId" : "project :utilities",
   "name" : "testRuntimeClasspath",
   "components" : [ {
-    "id" : "project :list",
+    "id" : "project :utilities",
     "repositoryUrl" : null,
-    "dependencies" : [ "org.junit.jupiter:junit-jupiter:5.9.1" ]
+    "dependencies" : [ "project :dependency-extractor-plugin:list", "org.junit.jupiter:junit-jupiter:5.9.1" ]
+  }, {
+    "id" : "project :dependency-extractor-plugin:list",
+    "repositoryUrl" : null,
+    "dependencies" : [ ]
   }, {
     "id" : "org.junit.jupiter:junit-jupiter:5.9.1",
     "repositoryUrl" : "https://repo.maven.apache.org/maven2/",
@@ -349,5 +293,69 @@
     "id" : "org.junit.jupiter:junit-jupiter-params:5.9.1",
     "repositoryUrl" : "https://repo.maven.apache.org/maven2/",
     "dependencies" : [ "org.junit:junit-bom:5.9.1", "org.junit.jupiter:junit-jupiter-api:5.9.1" ]
+  } ]
+}, {
+  "rootId" : "project :utilities",
+  "name" : "testAnnotationProcessor",
+  "components" : [ {
+    "id" : "project :utilities",
+    "repositoryUrl" : null,
+    "dependencies" : [ ]
+  } ]
+}, {
+  "rootId" : "project :utilities",
+  "name" : "testCompileClasspath",
+  "components" : [ {
+    "id" : "project :utilities",
+    "repositoryUrl" : null,
+    "dependencies" : [ "project :dependency-extractor-plugin:list", "org.junit.jupiter:junit-jupiter:5.9.1" ]
+  }, {
+    "id" : "project :dependency-extractor-plugin:list",
+    "repositoryUrl" : null,
+    "dependencies" : [ ]
+  }, {
+    "id" : "org.junit.jupiter:junit-jupiter:5.9.1",
+    "repositoryUrl" : "https://repo.maven.apache.org/maven2/",
+    "dependencies" : [ "org.junit:junit-bom:5.9.1", "org.junit.jupiter:junit-jupiter-api:5.9.1", "org.junit.jupiter:junit-jupiter-params:5.9.1" ]
+  }, {
+    "id" : "org.junit:junit-bom:5.9.1",
+    "repositoryUrl" : "https://repo.maven.apache.org/maven2/",
+    "dependencies" : [ "org.junit.jupiter:junit-jupiter:5.9.1", "org.junit.jupiter:junit-jupiter-api:5.9.1", "org.junit.jupiter:junit-jupiter-params:5.9.1", "org.junit.platform:junit-platform-commons:1.9.1" ]
+  }, {
+    "id" : "org.junit.jupiter:junit-jupiter-api:5.9.1",
+    "repositoryUrl" : "https://repo.maven.apache.org/maven2/",
+    "dependencies" : [ "org.junit:junit-bom:5.9.1", "org.opentest4j:opentest4j:1.2.0", "org.junit.platform:junit-platform-commons:1.9.1", "org.apiguardian:apiguardian-api:1.1.2" ]
+  }, {
+    "id" : "org.opentest4j:opentest4j:1.2.0",
+    "repositoryUrl" : "https://repo.maven.apache.org/maven2/",
+    "dependencies" : [ ]
+  }, {
+    "id" : "org.junit.platform:junit-platform-commons:1.9.1",
+    "repositoryUrl" : "https://repo.maven.apache.org/maven2/",
+    "dependencies" : [ "org.junit:junit-bom:5.9.1", "org.apiguardian:apiguardian-api:1.1.2" ]
+  }, {
+    "id" : "org.apiguardian:apiguardian-api:1.1.2",
+    "repositoryUrl" : "https://repo.maven.apache.org/maven2/",
+    "dependencies" : [ ]
+  }, {
+    "id" : "org.junit.jupiter:junit-jupiter-params:5.9.1",
+    "repositoryUrl" : "https://repo.maven.apache.org/maven2/",
+    "dependencies" : [ "org.junit:junit-bom:5.9.1", "org.junit.jupiter:junit-jupiter-api:5.9.1", "org.apiguardian:apiguardian-api:1.1.2" ]
+  } ]
+}, {
+  "rootId" : "project :dependency-extractor-plugin:list",
+  "name" : "annotationProcessor",
+  "components" : [ {
+    "id" : "project :dependency-extractor-plugin:list",
+    "repositoryUrl" : null,
+    "dependencies" : [ ]
+  } ]
+}, {
+  "rootId" : "project :dependency-extractor-plugin:list",
+  "name" : "compileClasspath",
+  "components" : [ {
+    "id" : "project :dependency-extractor-plugin:list",
+    "repositoryUrl" : null,
+    "dependencies" : [ ]
   } ]
 } ]

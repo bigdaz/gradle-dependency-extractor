@@ -2,6 +2,9 @@ plugins {
     `java-library`
 }
 
+group = "org.java-app"
+version = "1.0"
+
 repositories {
     mavenCentral()
 }

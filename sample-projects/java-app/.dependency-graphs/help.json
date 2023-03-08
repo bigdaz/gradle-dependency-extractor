@@ -1,20 +1,8 @@
 [ {
-  "rootId" : "project :build-logic",
-  "name" : "compileClasspath",
+  "rootId" : "project :dependency-extractor-plugin:list",
+  "name" : "classpath",
   "components" : [ {
-    "id" : "project :build-logic",
-    "repositoryUrl" : null,
-    "dependencies" : [ "org.slf4j:slf4j-api:2.0.6" ]
-  }, {
-    "id" : "org.slf4j:slf4j-api:2.0.6",
-    "repositoryUrl" : "https://repo.maven.apache.org/maven2/",
-    "dependencies" : [ ]
-  } ]
-}, {
-  "rootId" : "project :build-logic",
-  "name" : "annotationProcessor",
-  "components" : [ {
-    "id" : "project :build-logic",
+    "id" : "project :dependency-extractor-plugin:list",
     "repositoryUrl" : null,
     "dependencies" : [ ]
   } ]
@@ -35,11 +23,23 @@
     "dependencies" : [ ]
   } ]
 }, {
-  "rootId" : "project :list",
-  "name" : "classpath",
+  "rootId" : "project :build-logic",
+  "name" : "annotationProcessor",
   "components" : [ {
-    "id" : "project :list",
+    "id" : "project :build-logic",
     "repositoryUrl" : null,
+    "dependencies" : [ ]
+  } ]
+}, {
+  "rootId" : "project :build-logic",
+  "name" : "compileClasspath",
+  "components" : [ {
+    "id" : "project :build-logic",
+    "repositoryUrl" : null,
+    "dependencies" : [ "org.slf4j:slf4j-api:2.0.6" ]
+  }, {
+    "id" : "org.slf4j:slf4j-api:2.0.6",
+    "repositoryUrl" : "https://repo.maven.apache.org/maven2/",
     "dependencies" : [ ]
   } ]
 }, {
