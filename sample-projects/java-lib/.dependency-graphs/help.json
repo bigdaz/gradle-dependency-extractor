@@ -1,1 +1,33 @@
-[ ]
+[ {
+  "rootId" : "unspecified:unspecified:unspecified",
+  "name" : "detachedConfiguration1",
+  "components" : [ {
+    "id" : "unspecified:unspecified:unspecified",
+    "repositoryUrl" : null,
+    "dependencies" : [ "com.github.spotbugs-base:com.github.spotbugs-base.gradle.plugin:5.0.13" ]
+  }, {
+    "id" : "com.github.spotbugs-base:com.github.spotbugs-base.gradle.plugin:5.0.13",
+    "repositoryUrl" : "https://plugins.gradle.org/m2",
+    "dependencies" : [ ]
+  } ]
+}, {
+  "rootId" : ":lib",
+  "name" : "classpath",
+  "components" : [ {
+    "id" : ":lib",
+    "repositoryUrl" : null,
+    "dependencies" : [ "gradle.plugin.org.example.greeting:greeting-plugin-example:1.0", "com.github.spotbugs-base:com.github.spotbugs-base.gradle.plugin:5.0.13" ]
+  }, {
+    "id" : "gradle.plugin.org.example.greeting:greeting-plugin-example:1.0",
+    "repositoryUrl" : "https://plugins.gradle.org/m2/",
+    "dependencies" : [ ]
+  }, {
+    "id" : "com.github.spotbugs-base:com.github.spotbugs-base.gradle.plugin:5.0.13",
+    "repositoryUrl" : "https://plugins.gradle.org/m2/",
+    "dependencies" : [ "com.github.spotbugs.snom:spotbugs-gradle-plugin:5.0.13" ]
+  }, {
+    "id" : "com.github.spotbugs.snom:spotbugs-gradle-plugin:5.0.13",
+    "repositoryUrl" : "https://plugins.gradle.org/m2/",
+    "dependencies" : [ ]
+  } ]
+} ]

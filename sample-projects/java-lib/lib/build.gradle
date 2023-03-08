@@ -1,7 +1,21 @@
+buildscript {
+    repositories {
+        maven {
+            url "https://plugins.gradle.org/m2/"
+        }
+    }
+    dependencies {
+        classpath "gradle.plugin.org.example.greeting:greeting-plugin-example:1.0"
+    }
+}
+
 plugins {
     id 'groovy'
     id 'java-library'
+    id "com.github.spotbugs-base" version "5.0.13"
 }
+
+apply plugin: "org.example.greeting"
 
 repositories {
     mavenCentral()
