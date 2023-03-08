@@ -1,0 +1,301 @@
+[ {
+  "rootId" : ":lib",
+  "name" : "compileClasspath",
+  "components" : [ {
+    "id" : ":lib",
+    "repositoryUrl" : null,
+    "dependencies" : [ "org.apache.commons:commons-math3:3.6.1", "com.google.guava:guava:31.1-jre" ]
+  }, {
+    "id" : "org.apache.commons:commons-math3:3.6.1",
+    "repositoryUrl" : "https://repo.maven.apache.org/maven2/",
+    "dependencies" : [ ]
+  }, {
+    "id" : "com.google.guava:guava:31.1-jre",
+    "repositoryUrl" : "https://repo.maven.apache.org/maven2/",
+    "dependencies" : [ "com.google.guava:failureaccess:1.0.1", "com.google.guava:listenablefuture:9999.0-empty-to-avoid-conflict-with-guava", "com.google.code.findbugs:jsr305:3.0.2", "org.checkerframework:checker-qual:3.12.0", "com.google.errorprone:error_prone_annotations:2.11.0", "com.google.j2objc:j2objc-annotations:1.3" ]
+  }, {
+    "id" : "com.google.guava:failureaccess:1.0.1",
+    "repositoryUrl" : "https://repo.maven.apache.org/maven2/",
+    "dependencies" : [ ]
+  }, {
+    "id" : "com.google.guava:listenablefuture:9999.0-empty-to-avoid-conflict-with-guava",
+    "repositoryUrl" : "https://repo.maven.apache.org/maven2/",
+    "dependencies" : [ ]
+  }, {
+    "id" : "com.google.code.findbugs:jsr305:3.0.2",
+    "repositoryUrl" : "https://repo.maven.apache.org/maven2/",
+    "dependencies" : [ ]
+  }, {
+    "id" : "org.checkerframework:checker-qual:3.12.0",
+    "repositoryUrl" : "https://repo.maven.apache.org/maven2/",
+    "dependencies" : [ ]
+  }, {
+    "id" : "com.google.errorprone:error_prone_annotations:2.11.0",
+    "repositoryUrl" : "https://repo.maven.apache.org/maven2/",
+    "dependencies" : [ ]
+  }, {
+    "id" : "com.google.j2objc:j2objc-annotations:1.3",
+    "repositoryUrl" : "https://repo.maven.apache.org/maven2/",
+    "dependencies" : [ ]
+  } ]
+}, {
+  "rootId" : ":lib",
+  "name" : "annotationProcessor",
+  "components" : [ {
+    "id" : ":lib",
+    "repositoryUrl" : null,
+    "dependencies" : [ ]
+  } ]
+}, {
+  "rootId" : ":lib",
+  "name" : "testCompileClasspath",
+  "components" : [ {
+    "id" : ":lib",
+    "repositoryUrl" : null,
+    "dependencies" : [ "org.apache.commons:commons-math3:3.6.1", "com.google.guava:guava:31.1-jre", "org.spockframework:spock-core:2.2-groovy-3.0" ]
+  }, {
+    "id" : "org.apache.commons:commons-math3:3.6.1",
+    "repositoryUrl" : "https://repo.maven.apache.org/maven2/",
+    "dependencies" : [ ]
+  }, {
+    "id" : "com.google.guava:guava:31.1-jre",
+    "repositoryUrl" : "https://repo.maven.apache.org/maven2/",
+    "dependencies" : [ "com.google.guava:failureaccess:1.0.1", "com.google.guava:listenablefuture:9999.0-empty-to-avoid-conflict-with-guava", "com.google.code.findbugs:jsr305:3.0.2", "org.checkerframework:checker-qual:3.12.0", "com.google.errorprone:error_prone_annotations:2.11.0", "com.google.j2objc:j2objc-annotations:1.3" ]
+  }, {
+    "id" : "com.google.guava:failureaccess:1.0.1",
+    "repositoryUrl" : "https://repo.maven.apache.org/maven2/",
+    "dependencies" : [ ]
+  }, {
+    "id" : "com.google.guava:listenablefuture:9999.0-empty-to-avoid-conflict-with-guava",
+    "repositoryUrl" : "https://repo.maven.apache.org/maven2/",
+    "dependencies" : [ ]
+  }, {
+    "id" : "com.google.code.findbugs:jsr305:3.0.2",
+    "repositoryUrl" : "https://repo.maven.apache.org/maven2/",
+    "dependencies" : [ ]
+  }, {
+    "id" : "org.checkerframework:checker-qual:3.12.0",
+    "repositoryUrl" : "https://repo.maven.apache.org/maven2/",
+    "dependencies" : [ ]
+  }, {
+    "id" : "com.google.errorprone:error_prone_annotations:2.11.0",
+    "repositoryUrl" : "https://repo.maven.apache.org/maven2/",
+    "dependencies" : [ ]
+  }, {
+    "id" : "com.google.j2objc:j2objc-annotations:1.3",
+    "repositoryUrl" : "https://repo.maven.apache.org/maven2/",
+    "dependencies" : [ ]
+  }, {
+    "id" : "org.spockframework:spock-core:2.2-groovy-3.0",
+    "repositoryUrl" : "https://repo.maven.apache.org/maven2/",
+    "dependencies" : [ "org.codehaus.groovy:groovy:3.0.12", "org.junit:junit-bom:5.9.0", "org.junit.platform:junit-platform-engine:1.9.0", "org.hamcrest:hamcrest:2.2" ]
+  }, {
+    "id" : "org.codehaus.groovy:groovy:3.0.12",
+    "repositoryUrl" : "https://repo.maven.apache.org/maven2/",
+    "dependencies" : [ ]
+  }, {
+    "id" : "org.junit:junit-bom:5.9.0",
+    "repositoryUrl" : "https://repo.maven.apache.org/maven2/",
+    "dependencies" : [ "org.junit.platform:junit-platform-engine:1.9.0", "org.junit.platform:junit-platform-commons:1.9.0" ]
+  }, {
+    "id" : "org.junit.platform:junit-platform-engine:1.9.0",
+    "repositoryUrl" : "https://repo.maven.apache.org/maven2/",
+    "dependencies" : [ "org.junit:junit-bom:5.9.0", "org.opentest4j:opentest4j:1.2.0", "org.junit.platform:junit-platform-commons:1.9.0", "org.apiguardian:apiguardian-api:1.1.2" ]
+  }, {
+    "id" : "org.opentest4j:opentest4j:1.2.0",
+    "repositoryUrl" : "https://repo.maven.apache.org/maven2/",
+    "dependencies" : [ ]
+  }, {
+    "id" : "org.junit.platform:junit-platform-commons:1.9.0",
+    "repositoryUrl" : "https://repo.maven.apache.org/maven2/",
+    "dependencies" : [ "org.junit:junit-bom:5.9.0", "org.apiguardian:apiguardian-api:1.1.2" ]
+  }, {
+    "id" : "org.apiguardian:apiguardian-api:1.1.2",
+    "repositoryUrl" : "https://repo.maven.apache.org/maven2/",
+    "dependencies" : [ ]
+  }, {
+    "id" : "org.hamcrest:hamcrest:2.2",
+    "repositoryUrl" : "https://repo.maven.apache.org/maven2/",
+    "dependencies" : [ ]
+  } ]
+}, {
+  "rootId" : ":lib",
+  "name" : "detachedConfiguration1",
+  "components" : [ {
+    "id" : ":lib",
+    "repositoryUrl" : null,
+    "dependencies" : [ "org.codehaus.groovy:groovy:3.0.12", "org.codehaus.groovy:groovy-ant:3.0.12", "org.codehaus.groovy:groovy-astbuilder:3.0.12", "org.codehaus.groovy:groovy-console:3.0.12", "org.codehaus.groovy:groovy-datetime:3.0.12", "org.codehaus.groovy:groovy-dateutil:3.0.12", "org.codehaus.groovy:groovy-nio:3.0.12", "org.codehaus.groovy:groovy-sql:3.0.12", "org.codehaus.groovy:groovy-test:3.0.12", "org.codehaus.groovy:groovy-templates:3.0.12", "org.codehaus.groovy:groovy-json:3.0.12", "org.codehaus.groovy:groovy-xml:3.0.12", "org.codehaus.groovy:groovy-groovydoc:3.0.12" ]
+  }, {
+    "id" : "org.codehaus.groovy:groovy:3.0.12",
+    "repositoryUrl" : "https://repo.maven.apache.org/maven2/",
+    "dependencies" : [ ]
+  }, {
+    "id" : "org.codehaus.groovy:groovy-ant:3.0.12",
+    "repositoryUrl" : "https://repo.maven.apache.org/maven2/",
+    "dependencies" : [ "org.codehaus.groovy:groovy:3.0.12", "org.apache.ant:ant:1.10.12", "org.apache.ant:ant-junit:1.10.12", "org.apache.ant:ant-launcher:1.10.12", "org.apache.ant:ant-antlr:1.10.12", "org.codehaus.groovy:groovy-groovydoc:3.0.12" ]
+  }, {
+    "id" : "org.apache.ant:ant:1.10.12",
+    "repositoryUrl" : "https://repo.maven.apache.org/maven2/",
+    "dependencies" : [ "org.apache.ant:ant-launcher:1.10.12" ]
+  }, {
+    "id" : "org.apache.ant:ant-launcher:1.10.12",
+    "repositoryUrl" : "https://repo.maven.apache.org/maven2/",
+    "dependencies" : [ ]
+  }, {
+    "id" : "org.apache.ant:ant-junit:1.10.12",
+    "repositoryUrl" : "https://repo.maven.apache.org/maven2/",
+    "dependencies" : [ "org.apache.ant:ant:1.10.12" ]
+  }, {
+    "id" : "org.apache.ant:ant-antlr:1.10.12",
+    "repositoryUrl" : "https://repo.maven.apache.org/maven2/",
+    "dependencies" : [ ]
+  }, {
+    "id" : "org.codehaus.groovy:groovy-groovydoc:3.0.12",
+    "repositoryUrl" : "https://repo.maven.apache.org/maven2/",
+    "dependencies" : [ "org.codehaus.groovy:groovy:3.0.12", "com.github.javaparser:javaparser-core:3.24.2", "org.codehaus.groovy:groovy-templates:3.0.12", "org.codehaus.groovy:groovy-docgenerator:3.0.12" ]
+  }, {
+    "id" : "com.github.javaparser:javaparser-core:3.24.2",
+    "repositoryUrl" : "https://repo.maven.apache.org/maven2/",
+    "dependencies" : [ ]
+  }, {
+    "id" : "org.codehaus.groovy:groovy-templates:3.0.12",
+    "repositoryUrl" : "https://repo.maven.apache.org/maven2/",
+    "dependencies" : [ "org.codehaus.groovy:groovy:3.0.12", "org.codehaus.groovy:groovy-xml:3.0.12" ]
+  }, {
+    "id" : "org.codehaus.groovy:groovy-xml:3.0.12",
+    "repositoryUrl" : "https://repo.maven.apache.org/maven2/",
+    "dependencies" : [ "org.codehaus.groovy:groovy:3.0.12" ]
+  }, {
+    "id" : "org.codehaus.groovy:groovy-docgenerator:3.0.12",
+    "repositoryUrl" : "https://repo.maven.apache.org/maven2/",
+    "dependencies" : [ "org.codehaus.groovy:groovy-templates:3.0.12", "org.codehaus.groovy:groovy:3.0.12", "com.thoughtworks.qdox:qdox:1.12.1" ]
+  }, {
+    "id" : "com.thoughtworks.qdox:qdox:1.12.1",
+    "repositoryUrl" : "https://repo.maven.apache.org/maven2/",
+    "dependencies" : [ ]
+  }, {
+    "id" : "org.codehaus.groovy:groovy-astbuilder:3.0.12",
+    "repositoryUrl" : "https://repo.maven.apache.org/maven2/",
+    "dependencies" : [ "org.codehaus.groovy:groovy:3.0.12" ]
+  }, {
+    "id" : "org.codehaus.groovy:groovy-console:3.0.12",
+    "repositoryUrl" : "https://repo.maven.apache.org/maven2/",
+    "dependencies" : [ "org.codehaus.groovy:groovy:3.0.12", "org.codehaus.groovy:groovy-templates:3.0.12", "org.codehaus.groovy:groovy-swing:3.0.12" ]
+  }, {
+    "id" : "org.codehaus.groovy:groovy-swing:3.0.12",
+    "repositoryUrl" : "https://repo.maven.apache.org/maven2/",
+    "dependencies" : [ "org.codehaus.groovy:groovy:3.0.12" ]
+  }, {
+    "id" : "org.codehaus.groovy:groovy-datetime:3.0.12",
+    "repositoryUrl" : "https://repo.maven.apache.org/maven2/",
+    "dependencies" : [ "org.codehaus.groovy:groovy:3.0.12" ]
+  }, {
+    "id" : "org.codehaus.groovy:groovy-dateutil:3.0.12",
+    "repositoryUrl" : "https://repo.maven.apache.org/maven2/",
+    "dependencies" : [ "org.codehaus.groovy:groovy:3.0.12" ]
+  }, {
+    "id" : "org.codehaus.groovy:groovy-nio:3.0.12",
+    "repositoryUrl" : "https://repo.maven.apache.org/maven2/",
+    "dependencies" : [ "org.codehaus.groovy:groovy:3.0.12" ]
+  }, {
+    "id" : "org.codehaus.groovy:groovy-sql:3.0.12",
+    "repositoryUrl" : "https://repo.maven.apache.org/maven2/",
+    "dependencies" : [ "org.codehaus.groovy:groovy:3.0.12" ]
+  }, {
+    "id" : "org.codehaus.groovy:groovy-test:3.0.12",
+    "repositoryUrl" : "https://repo.maven.apache.org/maven2/",
+    "dependencies" : [ "org.codehaus.groovy:groovy:3.0.12", "junit:junit:4.13.2" ]
+  }, {
+    "id" : "junit:junit:4.13.2",
+    "repositoryUrl" : "https://repo.maven.apache.org/maven2/",
+    "dependencies" : [ "org.hamcrest:hamcrest-core:1.3" ]
+  }, {
+    "id" : "org.hamcrest:hamcrest-core:1.3",
+    "repositoryUrl" : "https://repo.maven.apache.org/maven2/",
+    "dependencies" : [ ]
+  }, {
+    "id" : "org.codehaus.groovy:groovy-json:3.0.12",
+    "repositoryUrl" : "https://repo.maven.apache.org/maven2/",
+    "dependencies" : [ "org.codehaus.groovy:groovy:3.0.12" ]
+  } ]
+}, {
+  "rootId" : ":lib",
+  "name" : "testAnnotationProcessor",
+  "components" : [ {
+    "id" : ":lib",
+    "repositoryUrl" : null,
+    "dependencies" : [ ]
+  } ]
+}, {
+  "rootId" : ":lib",
+  "name" : "testRuntimeClasspath",
+  "components" : [ {
+    "id" : ":lib",
+    "repositoryUrl" : null,
+    "dependencies" : [ "org.apache.commons:commons-math3:3.6.1", "com.google.guava:guava:31.1-jre", "org.spockframework:spock-core:2.2-groovy-3.0", "org.junit.platform:junit-platform-launcher:1.9.0" ]
+  }, {
+    "id" : "org.apache.commons:commons-math3:3.6.1",
+    "repositoryUrl" : "https://repo.maven.apache.org/maven2/",
+    "dependencies" : [ ]
+  }, {
+    "id" : "com.google.guava:guava:31.1-jre",
+    "repositoryUrl" : "https://repo.maven.apache.org/maven2/",
+    "dependencies" : [ "com.google.guava:failureaccess:1.0.1", "com.google.guava:listenablefuture:9999.0-empty-to-avoid-conflict-with-guava", "com.google.code.findbugs:jsr305:3.0.2", "org.checkerframework:checker-qual:3.12.0", "com.google.errorprone:error_prone_annotations:2.11.0", "com.google.j2objc:j2objc-annotations:1.3" ]
+  }, {
+    "id" : "com.google.guava:failureaccess:1.0.1",
+    "repositoryUrl" : "https://repo.maven.apache.org/maven2/",
+    "dependencies" : [ ]
+  }, {
+    "id" : "com.google.guava:listenablefuture:9999.0-empty-to-avoid-conflict-with-guava",
+    "repositoryUrl" : "https://repo.maven.apache.org/maven2/",
+    "dependencies" : [ ]
+  }, {
+    "id" : "com.google.code.findbugs:jsr305:3.0.2",
+    "repositoryUrl" : "https://repo.maven.apache.org/maven2/",
+    "dependencies" : [ ]
+  }, {
+    "id" : "org.checkerframework:checker-qual:3.12.0",
+    "repositoryUrl" : "https://repo.maven.apache.org/maven2/",
+    "dependencies" : [ ]
+  }, {
+    "id" : "com.google.errorprone:error_prone_annotations:2.11.0",
+    "repositoryUrl" : "https://repo.maven.apache.org/maven2/",
+    "dependencies" : [ ]
+  }, {
+    "id" : "com.google.j2objc:j2objc-annotations:1.3",
+    "repositoryUrl" : "https://repo.maven.apache.org/maven2/",
+    "dependencies" : [ ]
+  }, {
+    "id" : "org.spockframework:spock-core:2.2-groovy-3.0",
+    "repositoryUrl" : "https://repo.maven.apache.org/maven2/",
+    "dependencies" : [ "org.codehaus.groovy:groovy:3.0.12", "org.junit:junit-bom:5.9.0", "org.junit.platform:junit-platform-engine:1.9.0", "org.hamcrest:hamcrest:2.2" ]
+  }, {
+    "id" : "org.codehaus.groovy:groovy:3.0.12",
+    "repositoryUrl" : "https://repo.maven.apache.org/maven2/",
+    "dependencies" : [ ]
+  }, {
+    "id" : "org.junit:junit-bom:5.9.0",
+    "repositoryUrl" : "https://repo.maven.apache.org/maven2/",
+    "dependencies" : [ "org.junit.platform:junit-platform-engine:1.9.0", "org.junit.platform:junit-platform-launcher:1.9.0", "org.junit.platform:junit-platform-commons:1.9.0" ]
+  }, {
+    "id" : "org.junit.platform:junit-platform-engine:1.9.0",
+    "repositoryUrl" : "https://repo.maven.apache.org/maven2/",
+    "dependencies" : [ "org.junit:junit-bom:5.9.0", "org.opentest4j:opentest4j:1.2.0", "org.junit.platform:junit-platform-commons:1.9.0" ]
+  }, {
+    "id" : "org.opentest4j:opentest4j:1.2.0",
+    "repositoryUrl" : "https://repo.maven.apache.org/maven2/",
+    "dependencies" : [ ]
+  }, {
+    "id" : "org.junit.platform:junit-platform-commons:1.9.0",
+    "repositoryUrl" : "https://repo.maven.apache.org/maven2/",
+    "dependencies" : [ "org.junit:junit-bom:5.9.0" ]
+  }, {
+    "id" : "org.junit.platform:junit-platform-launcher:1.9.0",
+    "repositoryUrl" : "https://repo.maven.apache.org/maven2/",
+    "dependencies" : [ "org.junit:junit-bom:5.9.0", "org.junit.platform:junit-platform-engine:1.9.0" ]
+  }, {
+    "id" : "org.hamcrest:hamcrest:2.2",
+    "repositoryUrl" : "https://repo.maven.apache.org/maven2/",
+    "dependencies" : [ ]
+  } ]
+} ]

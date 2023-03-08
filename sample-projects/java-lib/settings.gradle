@@ -1,0 +1,10 @@
+pluginManagement {
+    includeBuild("../..")
+}
+
+plugins {
+    id("org.gradle.dependencyextractor.settings")
+}
+
+rootProject.name = 'java-lib'
+include('lib')

@@ -20,7 +20,7 @@ class DependencyExtractorSamplesTest {
             val args = mutableListOf<Arguments>()
             val samplesDir = Path.of("../sample-projects")
             samplesDir.forEachDirectoryEntry() { sampleDir ->
-                sampleDir.resolve("dependency-graphs")
+                sampleDir.resolve(".dependency-graphs")
                     .takeIf { it.isDirectory() }
                     ?.forEachDirectoryEntry("*.json") { graphJson ->
                         args.add(Arguments.of(sampleDir.toFile(), graphJson.nameWithoutExtension))
@@ -32,7 +32,7 @@ class DependencyExtractorSamplesTest {
     @ParameterizedTest
     @MethodSource("sampleExecutions")
     fun `check sample execution`(sampleDir: File, taskName: String) {
-        val expectedDependencyGraphFile = File("${sampleDir}/dependency-graphs/${taskName}.json")
+        val expectedDependencyGraphFile = File("${sampleDir}/.dependency-graphs/${taskName}.json")
         expectedDependencyGraphFile.shouldExist()
 
         val sampleCopy = File("../build/${sampleDir.name}")
@@ -53,6 +53,6 @@ class DependencyExtractorSamplesTest {
         val graph = dependencyGraphFile.readText()
         val expectedGraph = expectedDependencyGraphFile.readText()
 
-        graph.shouldBe(expectedGraph)
+        graph.shouldBe(expectedGraph.trim())
     }
 }

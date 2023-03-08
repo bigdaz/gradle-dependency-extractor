@@ -1,0 +1,21 @@
+plugins {
+    id 'groovy'
+    id 'java-library'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    api 'org.apache.commons:commons-math3:3.6.1'
+    implementation 'com.google.guava:guava:31.1-jre'
+}
+
+testing {
+    suites {
+        test {
+            useSpock('2.2-groovy-3.0')
+        }
+    }
+}
