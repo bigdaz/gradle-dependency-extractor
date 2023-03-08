@@ -1,4 +1,39 @@
 [ {
+  "path" : ":buildSrc:",
+  "name" : "compileClasspath",
+  "rootComponent" : ":",
+  "components" : [ {
+    "id" : ":",
+    "repositoryUrl" : null,
+    "dependencies" : [ "org.apache.commons:commons-math3:3.6.1" ]
+  }, {
+    "id" : "org.apache.commons:commons-math3:3.6.1",
+    "repositoryUrl" : "https://repo.maven.apache.org/maven2/",
+    "dependencies" : [ ]
+  } ]
+}, {
+  "path" : ":buildSrc:",
+  "name" : "annotationProcessor",
+  "rootComponent" : ":",
+  "components" : [ {
+    "id" : ":",
+    "repositoryUrl" : null,
+    "dependencies" : [ ]
+  } ]
+}, {
+  "path" : ":buildSrc:",
+  "name" : "buildScriptClasspath",
+  "rootComponent" : ":",
+  "components" : [ {
+    "id" : ":",
+    "repositoryUrl" : null,
+    "dependencies" : [ ":", "org.apache.commons:commons-math3:3.6.1" ]
+  }, {
+    "id" : "org.apache.commons:commons-math3:3.6.1",
+    "repositoryUrl" : "https://repo.maven.apache.org/maven2/",
+    "dependencies" : [ ]
+  } ]
+}, {
   "path" : ":lib",
   "name" : "classpath",
   "rootComponent" : ":lib",
